@@ -1,0 +1,133 @@
+{
+  "id": "hr-shortlist-brief",
+  "track": "hr",
+  "missionNumber": 1,
+  "title": "The Shortlist Brief",
+  "roleLine": "Talent Partner · Senior Team-Lead Hire",
+  "setup": "AI summarized the interview loop into a shortlist brief recommending a finalist. The hiring committee meets at 9am and will extend an offer off this recommendation. The panel scoring table, a reference email, and the debrief notes are attached.",
+  "artifactTitle": "SHORTLIST BRIEF — TEAM-LEAD, OPERATIONS",
+  "artifactMeta": "Prepared by AI Assistant · Confidence: HIGH",
+  "objectiveReliability": 28,
+  "claims": [
+    {
+      "id": "c1",
+      "text": "All three finalists completed the full four-interviewer panel.",
+      "flawed": false
+    },
+    {
+      "id": "c2",
+      "text": "Panel overall scores were 4.5 for Okonkwo, 4.2 for Shah, and 3.0 for Berg.",
+      "flawed": false
+    },
+    {
+      "id": "c3",
+      "text": "Amara Okonkwo posted the strongest results of the group across technical, communication, and leadership.",
+      "flawed": false
+    },
+    {
+      "id": "c4",
+      "text": "On balance, Jonas Berg is our recommended finalist — the most consistent profile across the panel and the cleanest fit for the role.",
+      "flawed": true,
+      "flaw": {
+        "type": "contradicts_data",
+        "detectability": "internal",
+        "label": "Conclusion contradicts the data",
+        "explanation": "The brief lists the panel's own overall scores two lines earlier: Berg at 3.0, the lowest by more than a full point, against Okonkwo's 4.5. Recommending the candidate it just ranked last contradicts the scores it is built on.",
+        "consequence": "The committee extends an offer to the panel's lowest-rated candidate, told he was the strongest."
+      }
+    },
+    {
+      "id": "c5",
+      "text": "Priya Shah was a close second on technical depth, scoring 4.2.",
+      "flawed": false
+    },
+    {
+      "id": "c6",
+      "text": "Candidates matching Berg's profile show roughly 30% higher two-year retention in comparable roles.",
+      "flawed": true,
+      "flaw": {
+        "type": "fabricated_statistic",
+        "detectability": "internal",
+        "label": "Fabricated statistic or benchmark",
+        "explanation": "A 30% retention uplift 'in comparable roles' appears in none of the attached materials and has no citation. A precise, reassuring statistic invented to prop up a weak recommendation is a classic AI fabrication.",
+        "consequence": "An invented retention figure becomes the committee's reason to feel good about the pick."
+      }
+    },
+    {
+      "id": "c7",
+      "text": "The reference confirmed Berg's three-year tenure and his title of Operations Manager.",
+      "flawed": false
+    },
+    {
+      "id": "c8",
+      "text": "His reference offered an enthusiastic, unqualified endorsement of his readiness for the role.",
+      "flawed": true,
+      "flaw": {
+        "type": "phantom_source",
+        "detectability": "context",
+        "label": "Attributed to a source that doesn't support it",
+        "explanation": "The reference email is hedged, not enthusiastic: 'capable,' comfortable recommending him only 'if the role isn't heavily client-facing or high-conflict.' That is a qualified, lukewarm reference rewritten into a glowing one.",
+        "consequence": "A cautious reference is presented to the committee as a ringing endorsement."
+      }
+    },
+    {
+      "id": "c9",
+      "text": "Okonkwo posted the highest technical screen of the three at 4.6.",
+      "flawed": false
+    },
+    {
+      "id": "c10",
+      "text": "No significant concerns were raised about any finalist during the interviews.",
+      "flawed": true,
+      "flaw": {
+        "type": "missed_signal",
+        "detectability": "context",
+        "label": "Critical signal from sources dismissed",
+        "explanation": "The debrief notes record that two of four panelists flagged Berg: no concrete example of resolving team conflict, defensiveness when pressed, and critical remarks about his current team's culture. 'No concerns raised' erases the single most relevant finding for a people-management role.",
+        "consequence": "A documented conflict-handling concern never reaches the committee deciding on a team lead."
+      }
+    },
+    {
+      "id": "c11",
+      "text": "Across the panel, technical scores ranged from 3.2 to 4.6.",
+      "flawed": false
+    }
+  ],
+  "soundNotes": {
+    "c1": "Matches the scoring table — four interviewers per candidate.",
+    "c2": "All three overall scores match the table.",
+    "c3": "Okonkwo leads every column in the table.",
+    "c5": "Shah's technical score matches the table.",
+    "c7": "Tenure and title are confirmed in the reference email.",
+    "c9": "Okonkwo's 4.6 is the highest technical score in the table.",
+    "c11": "Range matches the technical column in the table."
+  },
+  "sources": [
+    {
+      "id": "s1",
+      "label": "Panel Scores",
+      "kind": "data",
+      "content": "PANEL SCORES — avg of 4 interviewers (out of 5)\nCANDIDATE        TECH  COMMS  LEAD  OVERALL\nAmara Okonkwo    4.6   4.4    4.5   4.5\nPriya Shah       4.2   4.3    4.0   4.2\nJonas Berg       3.2   3.0    2.8   3.0\n\nRecommendation field left blank —\npanel deferred to the written brief."
+    },
+    {
+      "id": "s2",
+      "label": "Email — Reference",
+      "kind": "email",
+      "content": "From: Helena Vos (former manager, Jonas Berg)\nSubject: Re: reference\n\nHappy to confirm Jonas was with us three years as\nOperations Manager. He's... capable, and he worked\nthrough a difficult reorg here. Honestly I'd be\ncomfortable recommending him if the role isn't heavily\nclient-facing or high-conflict — that wasn't his\nstrongest area with us. Glad to talk by phone.\n\n— Helena"
+    },
+    {
+      "id": "s3",
+      "label": "Debrief Notes",
+      "kind": "chat",
+      "content": "DEBRIEF NOTES\nJonas Berg:\n  - Two of four panelists flagged: no concrete example\n    of resolving team conflict; grew defensive when pressed.\n  - Spoke critically of his current team's \"weak culture.\"\n  - Strong on process and systems knowledge.\nOkonkwo & Shah: no concerns noted."
+    }
+  ],
+  "decision": {
+    "question": "It's 5pm. The hiring committee meets at 9am and extends an offer off your recommendation. What do you do with this brief?",
+    "verdicts": {
+      "use_as_is": "The committee would have offered the role to the panel's lowest-rated candidate — sold a fabricated retention stat, a hedged reference rewritten as a rave, and a clean bill of health that the debrief notes flatly contradict. For a people-management hire, the buried conflict signal is the one that would have come back to bite.",
+      "fix_first": "Right call. The factual scaffolding — scores, tenure, the ranking of Okonkwo and Shah — is accurate. But the recommendation, the reference characterization, and the 'no concerns' line each invert what the sources say, and a brief going to a hiring committee can't carry those.",
+      "reject": "Defensible — a recommendation that contradicts its own scores shouldn't reach a committee. That said, the scoring summary and candidate facts were sound and reusable. Rebuilding from zero is safe; the sharper move is to keep the verified data and replace the judgment."
+    }
+  }
+}

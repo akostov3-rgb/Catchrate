@@ -1,0 +1,133 @@
+{
+  "id": "finance-forecast-narrative",
+  "track": "finance",
+  "missionNumber": 1,
+  "title": "The Forecast Narrative",
+  "roleLine": "FP&A Lead · Reporting to the CFO",
+  "setup": "AI drafted the quarterly forecast commentary that goes into the board pack tomorrow. The CFO will present it as-is unless you flag something tonight. The Q3 P&L, the month-end cash table, and one account email are attached.",
+  "artifactTitle": "Q3 FORECAST COMMENTARY — FOR THE BOARD PACK",
+  "artifactMeta": "Prepared by AI Assistant · Confidence: HIGH",
+  "objectiveReliability": 30,
+  "claims": [
+    {
+      "id": "c1",
+      "text": "Q3 revenue came in at €12.0M, with cost of goods sold of €5.4M.",
+      "flawed": false
+    },
+    {
+      "id": "c2",
+      "text": "Operating income for the quarter was €1.8M, a 15% operating margin.",
+      "flawed": false
+    },
+    {
+      "id": "c3",
+      "text": "Gross margin reached 62% this quarter — the strongest result in four quarters.",
+      "flawed": true,
+      "flaw": {
+        "type": "contradicts_data",
+        "detectability": "internal",
+        "label": "Conclusion contradicts the data",
+        "explanation": "The brief states revenue of €12.0M and gross profit of €6.6M. That is a 55% gross margin, not 62%. The number contradicts arithmetic the brief itself lays out two lines apart.",
+        "consequence": "A 7-point margin overstatement goes to the board with the CFO's name on it."
+      }
+    },
+    {
+      "id": "c4",
+      "text": "Operating expenses held flat at €4.8M versus the prior quarter.",
+      "flawed": false
+    },
+    {
+      "id": "c5",
+      "text": "The sector is compounding at roughly 18% annually, giving the plan a structural tailwind to lean on.",
+      "flawed": true,
+      "flaw": {
+        "type": "fabricated_statistic",
+        "detectability": "internal",
+        "label": "Fabricated statistic or benchmark",
+        "explanation": "An 18% sector CAGR appears in none of the attached materials and carries no citation. A confident growth rate invented to justify an optimistic forecast is among the most common — and most quoted — AI fabrications.",
+        "consequence": "An imaginary growth rate becomes a planning assumption the board anchors on."
+      }
+    },
+    {
+      "id": "c6",
+      "text": "The cash balance stood at €6.2M as of month-end May.",
+      "flawed": false
+    },
+    {
+      "id": "c7",
+      "text": "The cash position remains stable, providing comfortable runway across the planning horizon.",
+      "flawed": true,
+      "flaw": {
+        "type": "misread_trend",
+        "detectability": "context",
+        "label": "Trend misread or explained away",
+        "explanation": "The cash table shows five consecutive monthly declines — €9.8M down to €6.2M, roughly €0.9M burned each month. 'Stable' describes a flat line; this is a steady drawdown with a finite runway.",
+        "consequence": "The board hears 'comfortable runway' while cash quietly counts down."
+      }
+    },
+    {
+      "id": "c8",
+      "text": "Gross profit for the quarter was €6.6M.",
+      "flawed": false
+    },
+    {
+      "id": "c9",
+      "text": "The revenue base is stable, and we expect Q4 to hold at or above Q3's €12.0M.",
+      "flawed": true,
+      "flaw": {
+        "type": "missed_signal",
+        "detectability": "context",
+        "label": "Critical signal from sources dismissed",
+        "explanation": "The account email confirms Meridian Foods — a €1.6M ARR contract — has given formal non-renewal notice effective end of Q4 and signed with a competitor. A 'stable, hold-or-grow' outlook that omits a known 13% revenue loss is not a forecast; it's a blind spot.",
+        "consequence": "The board approves Q4 targets built on revenue that is already walking out the door."
+      }
+    },
+    {
+      "id": "c10",
+      "text": "Net new bookings in Q3 totaled €2.1M, in line with the prior two quarters.",
+      "flawed": false
+    },
+    {
+      "id": "c11",
+      "text": "People costs remain the largest single operating-expense line at €3.0M.",
+      "flawed": false
+    }
+  ],
+  "soundNotes": {
+    "c1": "Matches the Q3 P&L summary.",
+    "c2": "Operating income and margin match the P&L.",
+    "c4": "Opex figure matches the P&L.",
+    "c6": "Matches the month-end cash table.",
+    "c8": "Matches the P&L gross profit line.",
+    "c10": "Bookings match the P&L; prior quarters were €2.0M and €2.2M.",
+    "c11": "People-cost line matches the P&L."
+  },
+  "sources": [
+    {
+      "id": "s1",
+      "label": "Q3 P&L Summary",
+      "kind": "data",
+      "content": "P&L SUMMARY — Q3 (EUR M)\nRevenue              12.0\nCOGS                  5.4\nGross profit          6.6   (55%)\nOpex                  4.8\n  of which People     3.0\nOperating income      1.8   (15%)\n\nNew bookings          2.1   (Q1 2.0 / Q2 2.2)"
+    },
+    {
+      "id": "s2",
+      "label": "Cash Position",
+      "kind": "data",
+      "content": "CASH BALANCE — month end (EUR M)\n  Jan   9.8\n  Feb   8.9\n  Mar   8.0\n  Apr   7.1\n  May   6.2\n\nFive consecutive monthly declines.\nAverage burn ~0.9 / month."
+    },
+    {
+      "id": "s3",
+      "label": "Email — Daniel Reyes",
+      "kind": "email",
+      "content": "From: Daniel Reyes, Account Director\nSubject: Meridian — non-renewal\n\nHeads up before the forecast locks: Meridian Foods has\ngiven formal notice they won't renew. It's a €1.6M ARR\ncontract, ending at the close of Q4 — they've signed with\na competitor.\n\nIt isn't reflected in the pipeline yet. Wanted you to\nhave it before the numbers go to the board.\n\n— Daniel"
+    }
+  ],
+  "decision": {
+    "question": "It's 5pm. This commentary goes into the board pack tomorrow morning. What do you do with it?",
+    "verdicts": {
+      "use_as_is": "The commentary would have told the board margins hit a four-quarter high, cash is comfortable, and Q4 holds flat — while the real numbers show 55% margin, a five-month cash drawdown, and a confirmed €1.6M of churn landing in Q4. Three optimistic errors, all pointing the same convenient direction.",
+      "fix_first": "Right call. The actuals — revenue, opex, bookings, the cash balance itself — are clean and worth keeping. The margin figure, the cash narrative, and the Q4 outlook each needed correcting against the sources before this reached the board.",
+      "reject": "Defensible — the conclusions are misleading and board-facing. Worth noting the underlying actuals were accurate; the failure was in the narrative layer, not the numbers. Rebuilding wholesale is safe but throws away reconciliations that were already right."
+    }
+  }
+}

@@ -1,0 +1,133 @@
+{
+  "id": "strategy-market-entry",
+  "track": "strategy",
+  "missionNumber": 1,
+  "title": "The Market Entry Brief",
+  "roleLine": "Strategy & Ops Lead · Corporate Development",
+  "setup": "AI drafted the go/no-go brief for entering an adjacent market. The exec team takes the decision tomorrow morning and this brief is the basis for it. The market-size table, a regulatory bulletin, and a competitor-pricing table are attached.",
+  "artifactTitle": "MARKET ENTRY BRIEF — ADJACENT SEGMENT",
+  "artifactMeta": "Prepared by AI Assistant · Confidence: HIGH",
+  "objectiveReliability": 30,
+  "claims": [
+    {
+      "id": "c1",
+      "text": "The market splits into three segments — enterprise (€48M), mid-market (€96M), and SMB (€120M) by current value.",
+      "flawed": false
+    },
+    {
+      "id": "c2",
+      "text": "SMB is the largest segment, both by value at €120M and by account count.",
+      "flawed": false
+    },
+    {
+      "id": "c3",
+      "text": "Summing the segments, the total addressable market is approximately €420M.",
+      "flawed": true,
+      "flaw": {
+        "type": "contradicts_data",
+        "detectability": "internal",
+        "label": "Conclusion contradicts the data",
+        "explanation": "The brief lists the three segments at €48M, €96M, and €120M — and states the total elsewhere as €264M. Those sum to €264M, not €420M. The headline TAM doesn't reconcile with the brief's own segment figures.",
+        "consequence": "Every return projection downstream is built on a market 60% larger than the one that exists."
+      }
+    },
+    {
+      "id": "c4",
+      "text": "Roughly 35% of the market is realistically serviceable within the first two years.",
+      "flawed": false
+    },
+    {
+      "id": "c5",
+      "text": "Comparable entrants into adjacent markets typically reach 25% category adoption within 18 months.",
+      "flawed": true,
+      "flaw": {
+        "type": "fabricated_statistic",
+        "detectability": "internal",
+        "label": "Fabricated statistic or benchmark",
+        "explanation": "A '25% adoption in 18 months' figure for 'comparable entrants' appears in none of the attached materials and carries no citation. A clean, confident adoption curve invented to make the case for entry is a hallmark AI fabrication.",
+        "consequence": "An imaginary adoption curve underwrites the revenue ramp the board signs off on."
+      }
+    },
+    {
+      "id": "c6",
+      "text": "The market is currently served by two primary incumbents, Helios and Castor.",
+      "flawed": false
+    },
+    {
+      "id": "c7",
+      "text": "Incumbents price at a premium — around €115 per seat — leaving comfortable room to enter below them on price.",
+      "flawed": true,
+      "flaw": {
+        "type": "misread_trend",
+        "detectability": "context",
+        "label": "Trend misread or explained away",
+        "explanation": "The €115 figure is two years old. The pricing table shows list prices falling about 20% a year to roughly €70 today, with multi-year deals closing 30% below that. The 'comfortable headroom' is a price war already in progress, read as a static premium.",
+        "consequence": "You'd enter undercutting a number that no one charges anymore, straight into a margin squeeze."
+      }
+    },
+    {
+      "id": "c8",
+      "text": "Both incumbents offer discounted multi-year agreements to retain larger accounts.",
+      "flawed": false
+    },
+    {
+      "id": "c9",
+      "text": "No material regulatory barriers to entry were identified for the target market.",
+      "flawed": true,
+      "flaw": {
+        "type": "missed_signal",
+        "detectability": "context",
+        "label": "Critical signal from sources dismissed",
+        "explanation": "The regulatory bulletin states that from 1 January new entrants must obtain an operating licence and store customer data in-region — a 4–6 month review with fees and annual audits, while incumbents are grandfathered for 24 months. That is a material barrier, and it lands squarely on you, not them.",
+        "consequence": "The go decision ignores a licensing gate that delays launch by half a year before you sell a thing."
+      }
+    },
+    {
+      "id": "c10",
+      "text": "Enterprise carries the highest ACV at €40K despite the smallest account base.",
+      "flawed": false
+    },
+    {
+      "id": "c11",
+      "text": "Total current market value across the three segments is €264M.",
+      "flawed": false
+    }
+  ],
+  "soundNotes": {
+    "c1": "Segment values match the market-size table.",
+    "c2": "SMB leads on both value and account count in the table.",
+    "c4": "Serviceable share matches the table.",
+    "c6": "Both incumbents appear in the competitor-pricing table.",
+    "c8": "Multi-year discounting is noted in the pricing table.",
+    "c10": "Enterprise ACV and account count match the table.",
+    "c11": "Matches the table total — and is what the segments actually sum to."
+  },
+  "sources": [
+    {
+      "id": "s1",
+      "label": "Market Size",
+      "kind": "data",
+      "content": "MARKET SIZE — current value\nSEGMENT       ACCOUNTS   ACV     VALUE\nEnterprise     1,200     €40K    €48.0M\nMid-market     8,000     €12K    €96.0M\nSMB           40,000     €3K     €120.0M\nTOTAL                            €264.0M\n\nServiceable in years 1–2: ~35%"
+    },
+    {
+      "id": "s2",
+      "label": "Regulatory Bulletin",
+      "kind": "data",
+      "content": "REGULATORY BULLETIN — Sector Authority (extract)\n\nEffective 1 January: all NEW market entrants must obtain\nan operating licence and store customer data in-region.\nLicensing review runs 4–6 months, with a one-time fee and\nannual audits.\n\nExisting operators are grandfathered for 24 months.\nNew entrants must comply from day one."
+    },
+    {
+      "id": "s3",
+      "label": "Competitor Pricing",
+      "kind": "data",
+      "content": "COMPETITOR PRICING (EUR / seat / month)\n               2y ago   1y ago   Now\nHelios            120      95       72\nCastor            110      90       68\nMarket avg        115      92       70\n\nList prices down ~20% per year.\nMulti-year deals routinely close ~30% below list."
+    }
+  ],
+  "decision": {
+    "question": "It's 5pm. The exec team takes the go/no-go call tomorrow morning off this brief. What do you do with it?",
+    "verdicts": {
+      "use_as_is": "The brief would have greenlit entry on a market sized 60% too large, a fabricated adoption curve, pricing headroom that's actually a price war, and zero mention of a licensing gate that delays your launch six months. Four errors, each one nudging the decision toward 'go.'",
+      "fix_first": "Right call. The segment data, the serviceable share, the incumbent landscape — all accurate and worth keeping. But the TAM, the adoption assumption, the pricing read, and the regulatory all-clear each needed correcting before this brief could carry a go/no-go decision.",
+      "reject": "Defensible — a brief that misstates its own market size shouldn't anchor a board decision. Still, the underlying market and pricing data were sound. The stronger move salvages the verified figures and rebuilds the analysis on top, rather than starting cold."
+    }
+  }
+}

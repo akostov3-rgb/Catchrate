@@ -1,0 +1,127 @@
+{
+  "id": "sales-voronova",
+  "track": "sales",
+  "missionNumber": 1,
+  "title": "The Voronova Renewal",
+  "roleLine": "Senior Account Executive · B2B SaaS",
+  "setup": "Your SDR ran this AI-generated account brief before tomorrow's renewal call with Voronova Industries — a €2.4M ARR account, renewal in 6 weeks. The call is at 10am. The source documents your SDR pulled are attached.",
+  "artifactTitle": "ACCOUNT BRIEF — VORONOVA INDUSTRIES",
+  "artifactMeta": "Prepared by AI Assistant · Confidence: HIGH",
+  "objectiveReliability": 30,
+  "claims": [
+    {
+      "id": "c1",
+      "text": "Voronova Industries is at month 22 of a 36-month contract, with renewal due in six weeks.",
+      "flawed": false
+    },
+    {
+      "id": "c2",
+      "text": "Current ARR is €2.4M, placing Voronova among the top-tier accounts in the portfolio.",
+      "flawed": false
+    },
+    {
+      "id": "c3",
+      "text": "Overall account health is GOOD, and renewal probability is assessed as HIGH.",
+      "flawed": true,
+      "flaw": {
+        "type": "contradicts_data",
+        "detectability": "internal",
+        "label": "Conclusion contradicts the data",
+        "explanation": "The brief itself reports 31% utilization, five weeks of declining usage, and zero adoption in the two expansion departments. Its own data describes an at-risk account; the health rating ignores it.",
+        "consequence": "You'd have walked into the renewal call expecting a formality."
+      }
+    },
+    {
+      "id": "c4",
+      "text": "The primary champion is Lena Kovač, VP Operations; the executive sponsor is Tomáš Blažek, CTO.",
+      "flawed": false
+    },
+    {
+      "id": "c5",
+      "text": "Current seat utilization stands at 31%, down from a peak of 48% in Q2.",
+      "flawed": false
+    },
+    {
+      "id": "c6",
+      "text": "Weekly active usage has stabilized at current levels following the post-restructure adjustment period.",
+      "flawed": true,
+      "flaw": {
+        "type": "misread_trend",
+        "detectability": "context",
+        "label": "Trend misread or explained away",
+        "explanation": "The usage report shows five consecutive weekly declines — 1,240 down to 590 — with no plateau anywhere in the data. 'Stabilized' is not a reading of this trend; it's a replacement of it.",
+        "consequence": "The decline would have kept compounding while you reported stability upward."
+      }
+    },
+    {
+      "id": "c7",
+      "text": "This pattern reflects typical mid-contract consolidation — enterprise accounts commonly plateau in months 18–24 as initial use cases mature.",
+      "flawed": true,
+      "flaw": {
+        "type": "fabricated_statistic",
+        "detectability": "internal",
+        "label": "Fabricated statistic or benchmark",
+        "explanation": "No source. No citation. A precise-sounding industry pattern, invented to make a collapse look normal. Unsourced benchmarks that conveniently explain away bad news are the most common AI fabrication.",
+        "consequence": "A made-up benchmark becomes the official explanation in your QBR deck."
+      }
+    },
+    {
+      "id": "c8",
+      "text": "Operations remains the primary active user base, while adoption in Finance and Procurement remains minimal.",
+      "flawed": false
+    },
+    {
+      "id": "c9",
+      "text": "No significant competitive activity has been identified around this account; the recent vendor roundtable noted on LinkedIn appears to be routine industry benchmarking.",
+      "flawed": true,
+      "flaw": {
+        "type": "missed_signal",
+        "detectability": "context",
+        "label": "Critical signal from sources dismissed",
+        "explanation": "The SDR's note shows the Head of Procurement at a roundtable hosted by Synaptiq — a direct competitor — publicly praising their CEO, six weeks before renewal. Dismissing that as 'routine' buries the single most important signal in the sources.",
+        "consequence": "You'd have prepared zero competitive defense for a deal that's actively being shopped."
+      }
+    },
+    {
+      "id": "c10",
+      "text": "Finance has initiated a review of all vendor contracts above €500K ahead of year-end close.",
+      "flawed": false
+    }
+  ],
+  "soundNotes": {
+    "c1": "Matches the contract record.",
+    "c2": "Correct.",
+    "c4": "Names and roles are accurate.",
+    "c5": "Consistent with the usage report.",
+    "c8": "Matches the department breakdown in the usage report.",
+    "c10": "Stated directly in Lena's email."
+  },
+  "sources": [
+    {
+      "id": "s1",
+      "label": "Usage Report",
+      "kind": "data",
+      "content": "CONTRACT   €2.4M ARR · Month 22 of 36 · Renewal in 6 weeks\nSEATS      200 licensed · 61 active last 30 days (30.5%)\n\nWEEKLY ACTIVE USERS\n  8 wks ago   1,240\n  6 wks ago     980\n  4 wks ago     810\n  2 wks ago     670\n  This week     590   <- fifth consecutive weekly decline\n\nDEPT: Operations active · Finance near-zero (4 logins/30d)\n      Procurement zero (0 logins/30d)\nNote: Finance & Procurement were Year-1 expansion targets."
+    },
+    {
+      "id": "s2",
+      "label": "Email — Lena Kovač",
+      "kind": "email",
+      "content": "Hi — quick heads up before Thursday.\n\nThings have been fluid since the restructure. Tomáš (our CTO)\nwon't join the call — he's heads-down on the migration project.\nI'll represent the business side.\n\nAlso: finance has asked us to review all vendor contracts over\n€500K ahead of year-end close. Routine, but it may come up.\n\n— Lena"
+    },
+    {
+      "id": "s3",
+      "label": "Slack — Marta S. (SDR)",
+      "kind": "chat",
+      "content": "hey — flagging something. Voronova's Head of Procurement\n(Radek Novák) posted on LinkedIn two weeks ago — he was at a\nvendor roundtable hosted by Synaptiq (our direct competitor).\nHe tagged their CEO and wrote \"interesting conversation about\nwhere enterprise ops tooling is heading.\"\n\npost is still up. thought you should see it before Thursday."
+    }
+  ],
+  "decision": {
+    "question": "It's 5pm. The call is at 10am tomorrow. What do you do with this brief?",
+    "verdicts": {
+      "use_as_is": "The brief told you the account was healthy, the decline was normal, and no competitor was in play. All three are wrong. Tomorrow at 10am you'd have opened with an expansion pitch on an account that's halfway out the door — with Synaptiq waiting.",
+      "fix_first": "Right call. The skeleton is usable — the facts are mostly real — but the health rating, the trend reading, and the competitive section needed to be rebuilt before this could touch your prep. That's what verification looks like in practice.",
+      "reject": "Defensible — this brief's conclusions are dangerous. Worth noting: about half its claims were accurate and usable. The strongest operators salvage the verified facts and rebuild the judgment layer. Full rejection is safe but expensive."
+    }
+  }
+}
