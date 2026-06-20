@@ -1,0 +1,133 @@
+{
+  "id": "marketing-q1-readout",
+  "track": "marketing",
+  "missionNumber": 1,
+  "title": "The Q1 Campaign Readout",
+  "roleLine": "Head of Growth · DTC Brand",
+  "setup": "Your analyst used AI to draft the Q1 campaign readout that goes to the leadership team tomorrow morning. It will set the Q2 budget split. The channel data, the customer pulse survey, and an analyst's note are attached.",
+  "artifactTitle": "Q1 CAMPAIGN READOUT — PAID & LIFECYCLE",
+  "artifactMeta": "Prepared by AI Assistant · Confidence: HIGH",
+  "objectiveReliability": 32,
+  "claims": [
+    {
+      "id": "c1",
+      "text": "Q1 generated €1.42M in attributed revenue across paid and organic channels.",
+      "flawed": false
+    },
+    {
+      "id": "c2",
+      "text": "Paid Search drove the largest revenue contribution at €612K on €180K of spend.",
+      "flawed": false
+    },
+    {
+      "id": "c3",
+      "text": "By channel, ROAS landed at 3.4x for Paid Search, 1.6x for Paid Social, and 12.0x for Email.",
+      "flawed": false
+    },
+    {
+      "id": "c4",
+      "text": "Paid Social delivered the strongest return on ad spend of any paid channel and should absorb the bulk of additional Q2 budget.",
+      "flawed": true,
+      "flaw": {
+        "type": "contradicts_data",
+        "detectability": "internal",
+        "label": "Conclusion contradicts the data",
+        "explanation": "The brief states Paid Social's ROAS two lines earlier: 1.6x, the lowest of the three paid channels and less than half of Paid Search. Calling it the strongest return contradicts a number the brief itself just reported.",
+        "consequence": "Q2 budget would have shifted toward the weakest-performing paid channel."
+      }
+    },
+    {
+      "id": "c5",
+      "text": "Paid Social creative is a clear strength — click-through reached 2.1%, well above the 0.9% industry benchmark for our category.",
+      "flawed": true,
+      "flaw": {
+        "type": "fabricated_statistic",
+        "detectability": "internal",
+        "label": "Fabricated statistic or benchmark",
+        "explanation": "The 0.9% 'industry benchmark for our category' appears nowhere in the sources and carries no citation. A precise comparison figure conjured to make a weak channel look strong is a textbook AI fabrication.",
+        "consequence": "An invented benchmark becomes the headline argument in your budget deck."
+      }
+    },
+    {
+      "id": "c6",
+      "text": "Email remained the most efficient channel at 12.0x ROAS, though its €20K spend limits absolute scale.",
+      "flawed": false
+    },
+    {
+      "id": "c7",
+      "text": "Total site traffic grew through Q1, signaling expanding top-of-funnel demand heading into Q2.",
+      "flawed": true,
+      "flaw": {
+        "type": "misread_trend",
+        "detectability": "context",
+        "label": "Trend misread or explained away",
+        "explanation": "The channel data shows total sessions flat at 460K — paid jumped from 120K to 210K while organic fell from 340K to 250K. The analyst's note says the same: the paid spike is masking a soft organic quarter. Top-of-funnel demand isn't expanding; it's being bought.",
+        "consequence": "You'd have told leadership demand was growing while organic reach quietly eroded."
+      }
+    },
+    {
+      "id": "c8",
+      "text": "Overall customer satisfaction held steady at 4.2 out of 5 in the Q1 pulse survey.",
+      "flawed": false
+    },
+    {
+      "id": "c9",
+      "text": "Customer sentiment remains strong; the modest dip in repeat-purchase intent reads as seasonal noise.",
+      "flawed": true,
+      "flaw": {
+        "type": "missed_signal",
+        "detectability": "context",
+        "label": "Critical signal from sources dismissed",
+        "explanation": "The pulse survey shows repeat-purchase intent down from 48% to 31% and NPS down from 39 to 22, with verbatims about competitors offering better renewal deals. That's a retention warning, not seasonal noise.",
+        "consequence": "A churn signal gets waved off in the one document leadership reads."
+      }
+    },
+    {
+      "id": "c10",
+      "text": "An external analyst noted rising Paid Social CPMs heading into Q2, a cost headwind worth monitoring.",
+      "flawed": false
+    },
+    {
+      "id": "c11",
+      "text": "Organic channels contributed €180K in attributed revenue with no associated media spend.",
+      "flawed": false
+    }
+  ],
+  "soundNotes": {
+    "c1": "Matches the total in the channel table.",
+    "c2": "Spend and revenue match the channel table.",
+    "c3": "All three ROAS figures match the channel table exactly.",
+    "c6": "Consistent with the channel table.",
+    "c8": "Matches the pulse survey headline number.",
+    "c10": "Stated directly in the analyst's email.",
+    "c11": "Matches the organic line in the channel table."
+  },
+  "sources": [
+    {
+      "id": "s1",
+      "label": "Channel Metrics",
+      "kind": "data",
+      "content": "Q1 CHANNEL PERFORMANCE\nCHANNEL        SPEND    REVENUE   ROAS\nPaid Search    €180K    €612K     3.4x\nPaid Social    €240K    €384K     1.6x\nEmail          €20K     €240K     12.0x\nOrganic        —        €180K     —\nTOTAL          €440K    €1.42M    3.2x\n\nSESSIONS (vs Q4)\n  Paid     Q4 120K -> Q1 210K\n  Organic  Q4 340K -> Q1 250K\n  Total    Q4 460K -> Q1 460K\nPaid Social CTR: 2.1%"
+    },
+    {
+      "id": "s2",
+      "label": "Customer Pulse",
+      "kind": "data",
+      "content": "CUSTOMER PULSE — Q1 (n=412)\nOverall satisfaction: 4.2 / 5  (Q4: 4.3)\nRepeat-purchase intent: 31%   (Q4: 48%)\nNet Promoter Score: 22        (Q4: 39)\n\nTop verbatims:\n  \"Still like the product, but a competitor offered\n   me a better annual deal — thinking of switching.\"\n  \"Renewal price jumped. Evaluating alternatives.\"\n  \"Support felt slower this quarter.\""
+    },
+    {
+      "id": "s3",
+      "label": "Email — Priya Anand",
+      "kind": "email",
+      "content": "From: Priya Anand, Sector Analyst\nSubject: Paid social into Q2\n\nQuick flag: CPMs across paid social are up ~20% QoQ\nacross the category and likely to keep climbing into Q2.\nEfficiency there gets harder, not easier.\n\nAlso worth watching — your organic sessions look soft\nthis quarter. The paid spike is masking it in the topline.\nHappy to dig in if useful.\n\n— Priya"
+    }
+  ],
+  "decision": {
+    "question": "It's 5pm. Leadership reads this at 9am and sets the Q2 split off it. What do you do with this readout?",
+    "verdicts": {
+      "use_as_is": "The readout would have steered Q2 budget into Paid Social — your weakest paid channel by ROAS — on the strength of an invented benchmark, while telling leadership demand was growing and customers were happy. The data in your own sources says the opposite on all three.",
+      "fix_first": "Right call. The revenue and ROAS facts are solid and worth keeping. But the budget recommendation, the traffic story, and the sentiment read each invert what the sources show — those needed rebuilding before this set a single euro of Q2 spend.",
+      "reject": "Defensible — the conclusions point the wrong way. Note that the channel figures and the topline revenue were accurate and reusable. Rebuilding from scratch is safe, but you'd be discarding the half of this that was already right."
+    }
+  }
+}
